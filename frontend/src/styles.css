@@ -1,0 +1,113 @@
+/* Fuente */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap');
+
+:root{
+  --blue:#0a7bff;         /* tono principal */
+  --blue-dark:#0056d6;
+  --green:#28A745;
+  --gray:#6C757D;
+  --white:#FFFFFF;
+  --bg:#0a7bff;           /* fondo de la app */
+  --panel:#e9f2ff;        /* panel azul bajito */
+  --radius:14px;
+  --shadow:0 10px 22px rgba(0,0,0,.14);
+}
+
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:#111;
+  font-family:"Outfit", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Header superior */
+.header{
+  position:sticky; top:0; z-index:50;
+  background:var(--blue); color:#fff; padding:12px 18px;
+  box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+.header .nav{
+  max-width:1100px; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.header .brand{font-weight:800; display:flex; gap:8px; align-items:center}
+.header a{color:#fff; text-decoration:none; font-weight:600; margin:0 10px}
+.header a.active{text-decoration:underline}
+.header .right{display:flex; align-items:center; gap:10px}
+.btn{
+  display:inline-block; border:none; cursor:pointer; font-weight:700;
+  padding:10px 16px; border-radius:12px; transition:.2s background;
+}
+.btn.primary{ background:var(--blue); color:#fff }
+.btn.white{ background:#fff; color:var(--blue) }
+.btn.ghost{ background:transparent; color:#fff; border:2px solid #fff }
+
+/* Layout principal */
+.container{ max-width:1100px; margin:22px auto; padding:0 18px }
+
+/* Tarjetas */
+.card{
+  background:var(--white); border-radius:var(--radius);
+  box-shadow:var(--shadow); padding:22px; margin-bottom:16px;
+}
+.hero{
+  background:var(--panel);
+  text-align:center;
+}
+.hero h1{ margin:0 0 6px; color:#1f5fdc; font-weight:800 }
+.hero p{ margin:0 0 16px; color:#4b5b78 }
+.hero .actions{ display:flex; gap:10px; justify-content:center }
+
+/* Sección de estadísticas del Home */
+.stats{
+  background:var(--panel);
+}
+.stats .title{ text-align:center; color:#1f5fdc; font-weight:800; margin-bottom:12px }
+.stats .bar{
+  height:16px; background:#1f5fdc20; border-radius:999px; overflow:hidden; margin:0 auto 6px; max-width:680px;
+  display:flex; align-items:center; justify-content:center;
+}
+.stats .bar .btn-mini{
+  font-size:13px; padding:5px 10px; border-radius:999px; background:#1f5fdc; color:#fff; border:none; cursor:pointer;
+}
+.stats .last{ text-align:center; color:#4b5b78; font-size:13px; margin-bottom:12px }
+.stats .grid{
+  display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+}
+.stats .kpi{
+  background:#fff; border-radius:12px; padding:16px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,.06);
+}
+.stats .kpi h3{ margin:0; font-size:28px; color:#1f5fdc }
+.stats .kpi p{ margin:4px 0 0; color:#4b5b78 }
+
+/* Lista de parqueaderos en Home */
+.badge{
+  display:inline-block; padding:4px 10px; border-radius:999px; border:1px solid #1f5fdc; color:#1f5fdc; font-size:12px;
+  margin-left:6px;
+}
+
+/* Slots */
+.slots{ display:grid; grid-template-columns:repeat(auto-fill,minmax(64px,1fr)); gap:8px; margin-top:10px }
+.slot{ text-align:center; border-radius:12px; color:#fff; padding:10px; font-weight:700; }
+.slot.av{ background:#28a745; cursor:pointer }
+.slot.rs{ background:#6c757d; cursor:not-allowed }
+.slot.sel{ background:#0a7bff }
+
+/* Inputs / selects */
+.input, .select{
+  width:100%; background:#f7f9ff; border:1px solid #dfe7ff; border-radius:12px; padding:12px; font-size:15px;
+  outline:none; margin-top:8px; margin-bottom:14px;
+}
+
+/* Tarjeta auth (login/register) centrada, como tu captura */
+.auth-wrap{
+  min-height:100vh; display:flex; align-items:center; justify-content:center; padding:22px;
+}
+.auth-card{
+  width:100%; max-width:520px; background:#fff; border-radius:14px; box-shadow:var(--shadow); padding:26px 24px;
+}
+.auth-card h1{ color:#1f5fdc; text-align:center; margin:0 0 16px }
+.auth-card .alt{ text-align:center; margin-top:12px; color:#4b5b78 }
+.auth-card .error{ color:#dc3545; text-align:center; min-height:20px; margin-top:6px }
