@@ -1,13 +1,11 @@
 // backend/jest.config.js
 export default {
   testEnvironment: 'node',
-  roots: ['<rootDir>/tests'],
-  testMatch: ['**/*.test.js'],
+  roots: ['<rootDir>/src', '<rootDir>/tests'],
+  testMatch: ['**/*.test.js', '**/*.spec.js'],   // <- también .spec.js
 
-  // ⏱️ Subimos timeout por descargas/arranque de Mongo en memoria
   testTimeout: 60000,
 
-  // Cobertura (excluimos server.js y config.js)
   collectCoverage: true,
   collectCoverageFrom: [
     'src/**/*.js',
@@ -16,10 +14,12 @@ export default {
   ],
   coverageDirectory: 'coverage',
   coverageReporters: ['text', 'lcov'],
+
+  // estos thresholds NO afectan Sonar, solo Jest (puedes dejarlos igual o quitarlos)
   coverageThreshold: {
     global: { lines: 0.6, functions: 0.6, branches: 0.6, statements: 0.6 }
   },
 
-  // Setup (Mongo en memoria)
+  setupFiles: ['dotenv/config'],
   setupFilesAfterEnv: ['<rootDir>/tests/setupTestEnv.js']
 };
