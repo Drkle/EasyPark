@@ -3,5 +3,5 @@ projectKey=Drkle_EasyPark
 serverUrl=https://sonarcloud.io
 serverVersion=8.0.0.68788
 dashboardUrl=https://sonarcloud.io/dashboard?id=Drkle_EasyPark
-ceTaskId=AZnvtNaQUs3AZmShBC0F
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZnvtNaQUs3AZmShBC0F
+ceTaskId=AZnwRXQbnwPBj2bYYc_z
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZnwRXQbnwPBj2bYYc_z

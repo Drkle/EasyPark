@@ -9,7 +9,8 @@ const router = Router();
 // Utilidades locales
 const isValidEmail = (value) =>
   typeof value === 'string' &&
-  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+  /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value.trim());
+
 
 function normalizeEmail(value) {
   return String(value || '').trim().toLowerCase();
